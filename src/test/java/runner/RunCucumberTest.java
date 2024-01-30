@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 @CucumberOptions(
         plugin = {}, /* Confiuração de report (relatório) dos testes */
         features = "src/test/resources/features", /* Pasta onde estão os BDDs */
-        tags = {"~@ignore"}, /* Tag específica para cada BDD, caso queira executar testes específicos */
+        tags = {"@sign_up"}, /* Tag específica para cada BDD, caso queira executar testes específicos */
         glue = ("steps") /* Pasta onde estão os steps */
 
 )

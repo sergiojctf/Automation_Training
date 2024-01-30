@@ -16,7 +16,14 @@ public class HomePage extends Utils {
 
     private By number_instantform_field = By.id("number");
 
+    private By signup_buttom = By.xpath("//*[@id=\"mynavbar\"]/div/a[2]");
+
+    private By submit_button = By.id("demo");
+
+    private By success_instantform = By.id("colored");
+
     public HomePage(WebDriver driver){
+
         this.driver = driver;
     }
 
@@ -31,7 +38,6 @@ public class HomePage extends Utils {
         driver.findElement(last_name_instantform_field).sendKeys("Test");
         driver.findElement(business_name_instantform_field).sendKeys("User Test Automation");
         driver.findElement(email_instantform_field).sendKeys(gerarEmailAleatorio());
-
     }
 
     public void calculoCampoResultInstantForm(){
@@ -55,16 +61,23 @@ public class HomePage extends Utils {
 
     public void clicarBotaoSubmitInstantForm(){
 
-        driver.findElement(By.id("demo")).click();
-
+        driver.findElement(submit_button).click();
     }
 
     public void validarRecebimentoCredenciaisInstantForm() throws InterruptedException {
 
-        esperarElementoEstarPresente(By.id("colored"), 10);
-        Boolean checked_form = driver.findElement(By.id("colored")).isEnabled();
+        esperarElementoEstarPresente(success_instantform, 10);
+        Boolean checked_form = driver.findElement(success_instantform).isEnabled();
         Assert.assertEquals(true, checked_form);
+    }
+
+    public void clicarSignUp(){
+
+        esperarElementoEstarPresente(signup_buttom, 30);
+        driver.findElement(signup_buttom).click();
 
     }
+
+
 
 }
