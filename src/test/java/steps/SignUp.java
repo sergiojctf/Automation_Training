@@ -13,14 +13,15 @@ public class SignUp extends RunCucumberTest {
     HomePage homePage = new HomePage(driver);
 
     @When("^clico na opção Sign Up$")
-    public void clicoNaOpcooSignUp() {
+    public void clicoNaOpcaoSignUp() {
+
         homePage.clicarSignUp();
-
-
     }
 
     @Then("^Deverá ser aberta a página de cadastro do site$")
     public void deveraSerAbertaAPaginaDeCadastroDoSite() {
+
+        homePage.validarAberturaDaPaginaSignUp();
 
     }
 }

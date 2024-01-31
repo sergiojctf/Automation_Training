@@ -7,7 +7,7 @@ Feature: Fazer cadastro no site
     Quero me cadastrar no site
     Para utilizar recursos da versão demo do site php travels
 
-    @cliar_em_signup_na_homepage
+    @clicar_em_signup_na_homepage
     Scenario: Abrir página de cadastro a partir da home page
         Given que estou no site 'php travels'
         When clico na opção Sign Up

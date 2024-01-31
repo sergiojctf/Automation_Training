@@ -26,7 +26,7 @@ public class HomePage extends Utils {
 
         this.driver = driver;
     }
-
+/*---------------------------------------------CTs Credencias---------------------------------------------------------*/
     public void acessarAplicacao(){
         driver.get("https://phptravels.com/demo/");
         maximizarBrowwser();
@@ -70,14 +70,23 @@ public class HomePage extends Utils {
         Boolean checked_form = driver.findElement(success_instantform).isEnabled();
         Assert.assertEquals(true, checked_form);
     }
-
+/*---------------------------------------------CTs Botão Sign Up------------------------------------------------------*/
     public void clicarSignUp(){
 
-        esperarElementoEstarPresente(signup_buttom, 30);
+        esperarElementoEstarPresente(signup_buttom, 10);
         driver.findElement(signup_buttom).click();
-
     }
 
+    public void validarAberturaDaPaginaSignUp(){
 
+        esperarAbrirOutraAba();
+        Boolean currentUrl = driver.getCurrentUrl().contains("https://phptravels.org/register.php");
+        Assert.assertEquals(true, currentUrl);
+    }
 
+/*---------------------------------------------CTs Chat---------------------------------------------------------------*/
+
+    public void clicarNeedHelp(){
+
+    }
 }
